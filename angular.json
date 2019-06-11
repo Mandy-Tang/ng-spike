@@ -25,7 +25,17 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/mxgraph/javascript",
+                "output": "./assets/mxgraph/"
+              },
+              {
+                "glob": "**/*",
+                "input": "./src/util/www",
+                "output": "./assets/mxgraph/grapheditor/"
+              }
             ],
             "styles": [
               "src/styles.scss"

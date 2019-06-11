@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MxgraphComponent } from './mxgraph/mxgraph.component';
+import { MxgraphComponent } from './mxgraph-page/mxgraph/mxgraph.component';
 import { MxgraphPageComponent } from './mxgraph-page/mxgraph-page.component';
 
 @NgModule({
