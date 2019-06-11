@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MxgraphComponent } from './mxgraph/mxgraph.component';
+import { MxgraphPageComponent } from './mxgraph-page/mxgraph-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MxgraphComponent,
+    MxgraphPageComponent
   ],
   imports: [
     BrowserModule,
