@@ -1,20 +1,22 @@
+import { NavPageModule } from './nav-page/nav-page.module';
+import { VirtualScrollTreePageModule } from './virtual-scroll-tree-page/virtual-scroll-tree-page.module';
+import { MxgraphPageModule } from './mxgraph-page/mxgraph-page.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MxgraphComponent } from './mxgraph-page/mxgraph/mxgraph.component';
-import { MxgraphPageComponent } from './mxgraph-page/mxgraph-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MxgraphComponent,
-    MxgraphPageComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MxgraphPageModule,
+    VirtualScrollTreePageModule,
+    NavPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
