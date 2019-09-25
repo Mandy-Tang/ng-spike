@@ -6,12 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./virtual-scroll-tree.component.scss']
 })
 export class VirtualScrollTreeComponent implements OnInit {
-  public data;
+  public nodes;
+  public options = {};
 
   constructor() { }
 
   ngOnInit() {
-    this.data = this.generateData(40, 50);
+    this.nodes = this.generateData(600, 20);
   }
 
   private generateData = (level1Count: number, level2Count: number = 0) => {
