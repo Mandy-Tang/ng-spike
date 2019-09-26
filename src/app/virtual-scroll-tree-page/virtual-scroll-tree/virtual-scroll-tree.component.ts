@@ -1,13 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { TreeNode } from 'angular-tree-component';
 
 @Component({
   selector: 'app-virtual-scroll-tree',
   templateUrl: './virtual-scroll-tree.component.html',
   styleUrls: ['./virtual-scroll-tree.component.scss']
 })
-export class VirtualScrollTreeComponent implements OnInit {
+export class VirtualScrollTreeComponent implements OnInit, AfterViewInit {
   public nodes;
-  public options = {};
+  public options = {
+    nodeHeight: 23,
+    useVirtualScroll: true,
+    dropSlotHeight: 3
+  };
+  @ViewChild('tree', {static: true}) tree;
 
   constructor() { }
 
@@ -15,24 +21,20 @@ export class VirtualScrollTreeComponent implements OnInit {
     this.nodes = this.generateData(600, 20);
   }
 
+  ngAfterViewInit(): void {
+    // this.tree.treeModel.expandAll();
+  }
+
   private generateData = (level1Count: number, level2Count: number = 0) => {
-    let index = 0;
-    const result = [];
-    for (let i = 0; i < level1Count; i++) {
-      result.push({
-        id: index,
-        name: `first level node - id ${index}`,
-        children: []
-      });
-      index++;
-      for (let j = 0; j < level2Count; j++) {
-        result[i].children.push({
-          id: index,
-          name: `second level node - id ${index}`,
-        });
-        index++;
-      }
-    }
+    const result = new Array(500).fill(null).map((item, i) => ({
+      id: `${i}`,
+      name: `rootDynamic${i}`,
+      children: new Array(100).fill(null).map((item, n) => ({
+        id: `${i}.${n}`,
+        name: `rootChildDynamic${i}.${n}`
+      }))
+    }));
+
     return result;
   }
 
