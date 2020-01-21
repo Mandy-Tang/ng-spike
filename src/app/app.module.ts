@@ -1,3 +1,4 @@
+import { AbortRequestPageModule } from './abort-request-page/abort-request-page.module';
 import { NavPageModule } from './nav-page/nav-page.module';
 import { VirtualScrollTreePageModule } from './virtual-scroll-tree-page/virtual-scroll-tree-page.module';
 import { MxgraphPageModule } from './mxgraph-page/mxgraph-page.module';
@@ -16,6 +17,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     MxgraphPageModule,
     VirtualScrollTreePageModule,
+    AbortRequestPageModule,
     NavPageModule
   ],
   providers: [],

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MxgraphPageComponent } from './mxgraph-page/mxgraph-page.component';
 import { VirtualScrollTreePageComponent } from './virtual-scroll-tree-page/virtual-scroll-tree-page.component';
+import { AbortRequestPageComponent } from './abort-request-page/abort-request-page.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'virtual-scroll-tree',
     component: VirtualScrollTreePageComponent
+  },
+  {
+    path: 'abort-request',
+    component: AbortRequestPageComponent
   },
   {
     path: '',
