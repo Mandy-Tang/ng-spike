@@ -179,6 +179,13 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/http@^7.2.16":
+  version "7.2.16"
+  resolved "https://registry.npm.taobao.org/@angular/http/download/@angular/http-7.2.16.tgz#f05337dd56faa86ce05b0dc378218a00fb337040"
+  integrity sha1-8FM33Vb6qGzgWw3DeCGKAPszcEA=
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/language-service@~8.0.0":
   version "8.0.0"
   resolved "https://registry.npm.taobao.org/@angular/language-service/download/@angular/language-service-8.0.0.tgz#1ee4ce5003897cad53597da28f4c94fe30519bfb"
