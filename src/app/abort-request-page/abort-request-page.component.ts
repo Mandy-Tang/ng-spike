@@ -15,7 +15,9 @@ export class AbortRequestPageComponent implements OnInit {
 
   ngOnInit() {
     // this.testNormalHttpRequest();
-    this.testGraphQLRequest();
+    // this.testGraphQLRequest();
+    // this.testGraphQLRequestAbort();
+    // this.catService.simpleAbort();
   }
 
   public testNormalHttpRequest() {
@@ -33,6 +35,24 @@ export class AbortRequestPageComponent implements OnInit {
     interval(1000).pipe(
       switchMap(() => {
         return this.catService.getAuthor();
+      }),
+      takeUntil(this.complete$), //  takeUntil must be the last operator
+    ).subscribe(data => {
+      console.log(new Date(), data);
+    })
+  }
+
+  public testGraphQLRequestAbort() {
+    let preAbortController;
+    interval(1000).pipe(
+      switchMap(() => {
+        if (preAbortController) {
+          debugger;
+          preAbortController.abort();
+        }
+        const {abortController, request} = this.catService.generateGetAuthorRequest();
+        preAbortController = abortController;
+        return request;
       }),
       takeUntil(this.complete$), //  takeUntil must be the last operator
     ).subscribe(data => {
